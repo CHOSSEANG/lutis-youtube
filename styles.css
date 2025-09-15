@@ -1,0 +1,30 @@
+.item-container{
+    display:flex;
+    flex-direction: column;
+}
+
+.thumbnail-container{
+    width:100%;
+}
+
+.item-footer {
+    display : flex;
+    height : 100px;
+}
+
+.item-avatar {
+    width: 45px;
+    height: 45px;
+    border: solid 1px lightgray;
+    border-radius: 50%;
+}
+
+.item-text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.item-text > p {
+    margin: 0px 0px;
+}
