@@ -10,11 +10,17 @@
     flex-direction : column;
 }
 
+.item-container:hover{
+    cursor:pointer;
+}
+
 .thumbnail-container{
     width : 100%;
     border:solid 1px lightgray;
     border-radius:20%;
 }
+
+
 
 .item-thumbnail{
     width: 100%;
