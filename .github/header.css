@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+.header {
+    background-color: white;
+    height: 56px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    width: 50px; 
+    height: 50px;
+    padding: 8px;
+    cursor: pointer;
+    margin-left: 1px;
+}
+
+.youtube-logo {
+    height: 40px; 
+    margin-left: 16px;
+    cursor: pointer;
+}
+
+.header-center {
+    display: flex;
+    align-items: center;
+    flex: 0 1 728px; 
+    margin: 0 40px;
+}
+
+.search-bar {
+    width: 100%;
+    display: flex;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 40px 0 0 40px; 
+    outline: none;
+}
+
+.search-bar input:focus {
+    border-color: #1c62b9;
+}
+
+.search-button {
+    width: 64px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 0 40px 40px 0; /* 오른쪽만 둥글게 */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.mic-button {
+    min-width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f0f0f0;
+    margin-left: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mic-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-right .header-button {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-right .header-icon {
+    width: 35px;
+    height: 35px;
+}
