@@ -8,6 +8,7 @@
 .item-container{
     display : flex;
     flex-direction : column;
+    height:400px;
 }
 
 .item-container:hover{
@@ -24,6 +25,12 @@
     width: 100%;
     border:solid 1px lightgray;
     border-radius:3%;
+}
+
+.video-element{
+    width: 100%;   
+    height: 205px;
+    flex-grow:1;
 }
 
 .item-footer {

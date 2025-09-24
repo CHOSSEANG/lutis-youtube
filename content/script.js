@@ -1364,9 +1364,12 @@ function createMultiItem(repeatCount,youtubeData,youtubeChannelData){
     const itemEL = document.createElement('div');
     itemEL.classList.add('item-container');
 
-    const imgEL = document.createElement('img');
-    imgEL.classList.add('item-thumbnail');
-    imgEL.src = youtubeData.items[i].snippet.thumbnails.medium.url;
+    // iframe 생성
+    const videoEL = document.createElement('iframe');
+    videoEL.classList.add('video-element');
+    videoEL.width= '400px';
+    videoEL.height = '300px';
+    videoEL.src = `https://www.youtube.com/embed/${youtubeData.items[i].id}`;
 
     // item footer 부분
     const itemFooterEL = document.createElement('div');
@@ -1396,7 +1399,7 @@ function createMultiItem(repeatCount,youtubeData,youtubeChannelData){
     itemFooterEL.append(itemTextEL);
 
     // item-container에 각 요소 할당
-    itemEL.append(imgEL);
+    itemEL.append(videoEL);
     itemEL.append(itemFooterEL);
 
     // grid-container에 각 요소 할당
