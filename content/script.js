@@ -1367,8 +1367,7 @@ function createMultiItem(repeatCount,youtubeData,youtubeChannelData){
     // iframe 생성
     const videoEL = document.createElement('iframe');
     videoEL.classList.add('video-element');
-    videoEL.width= '400px';
-    videoEL.height = '300px';
+    videoEL.setAttribute('frameborder','0');
     videoEL.src = `https://www.youtube.com/embed/${youtubeData.items[i].id}`;
 
     // item footer 부분
