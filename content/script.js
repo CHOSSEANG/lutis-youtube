@@ -1344,53 +1344,69 @@ const youtubeData = {
 const youtubeChannelData = [
   "https://yt3.ggpht.com/5ZTpnzox9XsGCufmI7Y_00m5mPr-ae2ouJxzRlsNmkT__DVoFDK7tenSlzYWdNEVixWNASiCDw=s240-c-k-c0x00ffffff-no-rj",
 "https://yt3.ggpht.com/sBxnItKjolnANWriklnCVUuUJyY9sjZMEv5UJ842-vLXiT2tQvWiU6Qvgi-ncl_eWuGjNtBm=s240-c-k-c0x00ffffff-no-rj",
-"https://yt3.ggpht.com/RErzRqJSsX0DY_IGc2Hj7SDCRpjB4p_ta8H5i4Twj66Jey7JC904Nl3P6cxhW260fqeImBpo=s240-c-k-c0x00ffffff-no-rj"]
+"https://yt3.ggpht.com/RErzRqJSsX0DY_IGc2Hj7SDCRpjB4p_ta8H5i4Twj66Jey7JC904Nl3P6cxhW260fqeImBpo=s240-c-k-c0x00ffffff-no-rj",
+"https://yt3.ggpht.com/isnEJp6g9aWLN_T7YUwKdefktSGi7YBzGxpVREvhxZOrZmOEoiZiaMckb0GGZ3I5KH7MRu2g=s240-c-k-c0x00ffffff-no-rj",
+"https://yt3.ggpht.com/ytc/AIdro_n2j3w7B8DpULUI9Z-GIFO2HVj487vk_hKU9Epsab-Q6qo=s240-c-k-c0x00ffffff-no-rj",
+"https://yt3.ggpht.com/ytc/AIdro_l8g0yRFG8xoe_qeqk8Ki9UFy36cB2IjZEWZWz0h7gl-t0=s240-c-k-c0x00ffffff-no-rj",
+"https://yt3.ggpht.com/kIYN06qpQsJ12QOUYAON3tGhCixYhAfyGZBT_y_aWhJcHUghleWBr8k6h26ZCQESS9v96zwfTXI=s240-c-k-c0x00ffffff-no-rj",
+"https://yt3.ggpht.com/E5cbz8NuHWhQwj3qoYYWWeqtzYgjfCvFrDEt3OOzXMWX7Jb2pmBBgi978BmhjNkME14YL6Ujhw=s240-c-k-c0x00ffffff-no-rj",
+"https://yt3.ggpht.com/-qdBYu4xKJpBeghDga5gjTdvt2clLo8TuIZqNqLPszwrxe-nOwngYKb2tN2-YxmLyJgyxiVW-Wk=s240-c-k-c0x00ffffff-no-rj",
+"https://yt3.ggpht.com/pjRCw5kR-QDu31k-3LY1A8uvgSIaueYsGGELGI2v6UqxAQSJPkbzvSGauoawFcjYe7Q6tw8Nkg=s240-c-k-c0x00ffffff-no-rj"
+]
 
 document.getElementsByClassName('thumbnail-container');
 
 const gridEL = document.getElementById("grid-container");
 
-// item container 생성
-const itemEL = document.createElement('div');
-itemEL.classList.add('item-container');
+function createMultiItem(repeatCount,youtubeData,youtubeChannelData){
+  for(let i = 0; i < repeatCount;i++){
+    // item container 생성
+    const itemEL = document.createElement('div');
+    itemEL.classList.add('item-container');
 
-const imgEL = document.createElement('img');
-imgEL.classList.add('item-thumbnail');
-imgEL.src = youtubeData.items[0].snippet.thumbnails.medium.url;
+    const imgEL = document.createElement('img');
+    imgEL.classList.add('item-thumbnail');
+    imgEL.src = youtubeData.items[i].snippet.thumbnails.medium.url;
 
-// item footer 부분
-const itemFooterEL = document.createElement('div');
-itemFooterEL.classList.add('item-footer');
+    // item footer 부분
+    const itemFooterEL = document.createElement('div');
+    itemFooterEL.classList.add('item-footer');
 
-const itemAvatarEL = document.createElement('img');
-itemAvatarEL.classList.add('item-avatar');
-itemAvatarEL.src = youtubeChannelData[0];
+    const itemAvatarEL = document.createElement('img');
+    itemAvatarEL.classList.add('item-avatar');
+    itemAvatarEL.src = youtubeChannelData[i];
 
-const itemTextEL = document.createElement('div');
-itemTextEL.classList.add('item-text');
+    const itemTextEL = document.createElement('div');
+    itemTextEL.classList.add('item-text');
 
-const titleEL = document.createElement('p');
-titleEL.innerText = youtubeData.items[0].snippet.title;
-const channelEL = document.createElement('p');
-channelEL.innerText = youtubeData.items[0].snippet.channelTitle;
-const timeEL = document.createElement('p');
-timeEL.innerText = `조회수 ${youtubeData.items[0].statistics.viewCount}회 ${youtubeData.items[0].snippet.publishedAt.substring(0,10)}`;
+    const titleEL = document.createElement('p');
+    titleEL.innerText = youtubeData.items[i].snippet.title;
+    const channelEL = document.createElement('p');
+    channelEL.innerText = youtubeData.items[i].snippet.channelTitle;
+    const timeEL = document.createElement('p');
+    timeEL.innerText = `조회수 ${youtubeData.items[i].statistics.viewCount}회 ${youtubeData.items[i].snippet.publishedAt.substring(0,10)}`;
 
-//item text에 요소 할당
-itemTextEL.append(titleEL);
-itemTextEL.append(channelEL);
-itemTextEL.append(timeEL);
+    //item text에 요소 할당
+    itemTextEL.append(titleEL);
+    itemTextEL.append(channelEL);
+    itemTextEL.append(timeEL);
 
-//item footer에 요소 할당
-itemFooterEL.append(itemAvatarEL);
-itemFooterEL.append(itemTextEL);
+    //item footer에 요소 할당
+    itemFooterEL.append(itemAvatarEL);
+    itemFooterEL.append(itemTextEL);
 
-// item-container에 각 요소 할당
-itemEL.append(imgEL);
-itemEL.append(itemFooterEL);
+    // item-container에 각 요소 할당
+    itemEL.append(imgEL);
+    itemEL.append(itemFooterEL);
 
-// grid-container에 각 요소 할당
-gridEL.append(itemEL);
+    // grid-container에 각 요소 할당
+    gridEL.append(itemEL);
+  }
+}
+
+createMultiItem(10, youtubeData, youtubeChannelData);
+
+
 
 
 
