@@ -66,3 +66,30 @@
 .item-text > p:last-child {
     color: gray;
 }
+
+@media (min-width: 500px) {
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+    .item-container{
+        height: 600px;
+    }
+}
+
+@media (min-width: 1000px){
+    .grid-container{
+        grid-template-columns: 1fr 1fr;
+    }
+    .item-container{
+        height: 500px;
+    }
+}
+
+@media (min-width: 1400px){
+    .grid-container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .item-container{
+        height: 400px;
+    }
+}
