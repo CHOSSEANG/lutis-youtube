@@ -1,7 +1,10 @@
 #content-container{
     position:fixed;
     left:72px;
-    
+    width:93%;
+    height: 95%;
+    padding: 15px;
+    overflow: scroll;
 }
 
 .grid-container{
